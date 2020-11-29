@@ -1,0 +1,24 @@
+{
+  "name": "tums-ticketing",
+  "version": "0.1.0",
+  "description": "Tehran University of Medical Science's ticketing web-application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armin-em/tums-ticketing.git"
+  },
+  "keywords": [
+    "ticketing",
+    "education",
+    "university"
+  ],
+  "author": "Armin Emamdoust",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/armin-em/tums-ticketing/issues"
+  },
+  "homepage": "https://github.com/armin-em/tums-ticketing#readme"
+}
