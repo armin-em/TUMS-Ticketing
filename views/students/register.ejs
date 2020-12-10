@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tehran University of Medical Sciences - Kish International Campus Ticketing Service"
+    />
+    <meta name="author" content="TUMS-Kish ICT" />
+    <meta name="theme-color" content="#2256b5" />
+    <title>TUMS-Kish Ticketing | Register</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/art2.svg" />
+    <link rel="alternate icon" href="/assets/images/art2.svg" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/logins.css" />
+    <title>Tehran University of Medical Scienses | Ticketing System</title>
+  </head>
+  <body class="vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="tumsBrand" href="#"
+          ><img id="tumsLogo" src="/assets/images/tums-logo-white.png" alt=""
+        /></a>
+      </div>
+    </nav>
+    <%- include('../partials/flash') %>
+    <main class="text-center container-fluid d-flex">
+      <div class="col-sm-6" id="cardContainer">
+        <div class="card border-primary text-center" id="cardItself">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="true" href="#"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Card BODY -->
+          <div class="card-body">
+            <h5 class="card-title my-4">Student Registeration Form</h5>
+            <form
+              class="needs-validation mt-3"
+              action="/register"
+              method="POST"
+              novalidate
+            >
+              <div class="row g-2">
+                <div class="form-floating mb-3 col-md-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="John Doe"
+                    required
+                    autofocus
+                  />
+                  <label class="form-label" for="fullName">Full Name</label>
+                  <div class="valid-feedback">Full name is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Please provide your full name.
+                  </div>
+                </div>
+                <div class="form-floating mb-3 col-md-4">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="studentID"
+                    name="studentID"
+                    placeholder="9823456789"
+                    required
+                  />
+                  <label for="studentID">Student ID</label>
+                  <div class="valid-feedback">Student ID is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Please provide a valid student ID.
+                  </div>
+                </div>
+                <div class="form-floating mb-3 col-md-4">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="semester"
+                    name="semester"
+                    placeholder="5"
+                    required
+                  />
+                  <label for="semester">Current Semester</label>
+                  <div class="valid-feedback">Current Semester is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Please provide your current semester.
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="name@domain.com"
+                    required
+                  />
+                  <label for="email">Email address</label>
+                  <div class="valid-feedback">Email address is OK!</div>
+                  <div class="invalid-feedback">
+                    Please provide a valid Email address.
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="password">Password</label>
+                  <div class="valid-feedback">Password is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Password must be at least 6 characters long
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Confirm Password"
+                    required
+                  />
+                  <label for="confirmPassword">Confirm Password</label>
+                  <div class="valid-feedback">Passwords match!</div>
+                  <div class="invalid-feedback my-2">
+                    Please make sure your passwords match.
+                  </div>
+                </div>
+                <button class="btn btn-lg btn-primary" type="submit">
+                  Register
+                </button>
+              </div>
+              <p class="my-5 text-muted">
+                &copy; 2020 TUMS - Kish International Campus ICT
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6" id="imgContainer">
+        <img
+          class="my-4 mx-auto"
+          id="art"
+          src="/assets/images/art.svg"
+          alt=""
+        />
+        <h1 class="h3 mb-3 fw-normal" id="serviceDescription">
+          Register to TUMS-Kish Ticketing System
+        </h1>
+      </div>
+    </main>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/formValidator.js"></script>
+  </body>
+</html>

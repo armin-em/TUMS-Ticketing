@@ -1,0 +1,61 @@
+body,
+html {
+  height: 100%;
+  /* background-color: #f5f5f5; */
+}
+
+body {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 26%,
+    rgba(108, 45, 253, 1) 100%
+  );
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap-reverse !important;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#tumsLogo {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+#imgContainer {
+  align-self: center;
+}
+
+#art {
+  height: 60%;
+  width: 60%;
+}
+
+#cardContainer {
+  flex-grow: 1;
+}
+
+#cardItself {
+  height: 100%;
+}
+
+#serviceDescription {
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: #f5f5f5;
+}
+
+@media (max-width: 576px) {
+  #art {
+    max-width: 45%;
+    max-height: 45%;
+  }
+
+  #tumsBrand {
+    align-self: center;
+    justify-self: center;
+  }
+}

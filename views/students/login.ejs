@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tehran University of Medical Sciences - Kish International Campus Ticketing Service"
+    />
+    <meta name="author" content="TUMS-Kish ICT" />
+    <meta name="theme-color" content="#2256b5" />
+    <title>TUMS-Kish Ticketing | Login</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/art2.svg" />
+    <link rel="alternate icon" href="/assets/images/art2.svg" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/logins.css" />
+    <title>Tehran University of Medical Scienses | Ticketing System</title>
+  </head>
+  <body class="vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5" id="tumsNav">
+      <div class="container-fluid">
+        <a class="navbar-brand" id="tumsBrand" href="#"
+          ><img id="tumsLogo" src="/assets/images/tums-logo-white.png" alt=""
+        /></a>
+      </div>
+    </nav>
+    <%- include('../partials/flash') %>
+    <main class="text-center container-fluid d-flex">
+      <div class="col-sm-6" id="cardContainer">
+        <div class="card border-primary text-center" id="cardItself">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="true" href="/register"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Card BODY -->
+          <div class="card-body">
+            <h5 class="card-title my-4">Login</h5>
+            <p class="card-text">
+              Having troubles logging in? Make sure you are
+              <strong><a href="/register">registered</a></strong> first.
+            </p>
+            <form
+              class="needs-validation mt-3"
+              action="/register"
+              method="POST"
+              novalidate
+            >
+              <div class="row g-2">
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="studentID"
+                    name="studentID"
+                    placeholder="9823456789"
+                    required
+                  />
+                  <label for="studentID">Student ID</label>
+                  <div class="valid-feedback">Student ID is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Please provide a valid student ID.
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="password">Password</label>
+                  <div class="valid-feedback">Password is OK!</div>
+                  <div class="invalid-feedback my-2">
+                    Password must be at least 6 characters long
+                  </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary" type="submit">
+                  Login
+                </button>
+              </div>
+              <p class="my-5 text-muted">
+                &copy; 2020 TUMS - Kish International Campus ICT
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6" id="imgContainer">
+        <img
+          class="my-4 mx-auto"
+          id="art"
+          src="/assets/images/art.svg"
+          alt=""
+        />
+        <h1 class="h3 mb-3 fw-normal" id="serviceDescription">
+          Login to TUMS-Kish Ticketing System
+        </h1>
+      </div>
+    </main>
+
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/formValidator.js"></script>
+  </body>
+</html>
