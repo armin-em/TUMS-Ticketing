@@ -11,7 +11,7 @@ const morgan = require('morgan');
 const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError');
 
-// const studentRoutes = require('./routes/studentRoutes');
+const studentRoutes = require('./routes/studentRoutes');
 
 const StudentModel = require('./models/studentModel');
 
@@ -83,50 +83,7 @@ app.use((req, res, next) => {
   next();
 })
 
-// app.use('/', studentRoutes);
-
-app.get("/register", (req, res) => {
-  req.flash('success', 'Welcome!');
-  res.render("students/register");
-});
-
-app.post("/register", async (req, res, next) => {
-  try {
-    const {fullName, studentID, semester, email, password} = req.body;
-    const username = studentID;
-    const ss = await StudentModel.find({fullName: fullName});
-    console.log(ss);
-    const student = new StudentModel({fullName, studentID, username, semester, email});
-    console.log("student: " + student);
-    const registeredStudent = await StudentModel.register(student, password, function(err) {
-      if (err) {
-        req.flash('error', err.message);
-        console.log('error while user register!', err);
-        return next(err);
-      }});
-    console.log('registeredStudent: ' + registeredStudent);
-    // req.login(registeredUser, err => {
-    //   if (err) {
-    //     return next(err);
-    //   }
-    //   req.flash('success', 'Welcome to Yelp Camp!');
-    //   res.redirect('/campgrounds');
-    // })
-  } catch (e) {
-    req.flash('error', e.message);
-
-    // console.log(req.body)
-  }
-
-})
-
-app.get("/login", (req, res) => {
-  res.render("students/login");
-});
-
-// app.post("/login", (passport.authenticate('local',{failureFlash: true, failureRedirect: '/login'})))
-
-
+app.use('/', studentRoutes);
 
 app.get("/success", (req, res) => {
   res.send('success!')

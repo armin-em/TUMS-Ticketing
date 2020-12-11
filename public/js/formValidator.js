@@ -5,6 +5,7 @@
   const pass1 = document.querySelector("#password");
   const pass2 = document.querySelector("#confirmPassword");
   const stdID = document.querySelector("#studentID");
+  const semester = document.querySelector("#semester");
   Array.from(forms).forEach(function (form) {
     form.addEventListener(
       "submit",
@@ -20,7 +21,10 @@
             : ""
         );
         stdID.setCustomValidity(
-          stdID.value.length <= 9 ? "Please Provide a valid Student ID." : ""
+          stdID.value.length <= 9 || stdID.value.length > 12 ? "Please Provide a valid Student ID." : ""
+        );
+        semester.setCustomValidity(
+            semester.value >= 14 || semester.value <= 0 ? "Semester must be greater than 0 and less than 13." : ""
         );
         if (!form.checkValidity()) {
           event.preventDefault();
