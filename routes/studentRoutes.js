@@ -9,6 +9,8 @@ router.route('/student/register')
     .get(studentController.renderStudentRegister)
     .post(catchAsync(studentController.validateRegister, studentController.studentRegister));
 
+router.route('/student/login')
+    .get(studentController.renderStudentLogin)
 
 
 module.exports = router;
